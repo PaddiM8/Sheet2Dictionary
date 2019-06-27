@@ -7,8 +7,13 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-SPREADSHEET_ID = "1K4ICqBO1N4HdhZ0sr3tq6EQHe5zDK0OPxd3Ik_rHAQ8"
-RANGE = "Lexicon!A:G"
+
+options = None
+if os.path.exists('options.json'):
+    with open('options.json') as f:
+        options = json.load(f)
+else
+    run_setup()
 
 def parse_example_string(exampleString):
     if not exampleString: return None
@@ -65,7 +70,7 @@ def main():
 
     service = build('sheets', 'v4', credentials=creds)
     result = service.spreadsheets().values().get(
-    spreadsheetId=SPREADSHEET_ID, range=RANGE).execute()
+    spreadsheetId=options["spreadsheetId"], range=options["range"]).execute()
     rows = result.get('values', [])
     words = generate_words(rows)
     #words = []
