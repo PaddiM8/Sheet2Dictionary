@@ -37,10 +37,7 @@ p {
   grid-template-areas: "search header" "list main" "pagination main";
   grid-template-columns: 650px auto;
   grid-template-rows: 60px auto 50px;
-  grid-gap: 10px;
-  padding: 10px;
   box-sizing: border-box;
-  background-color: #E0E0E0;
 }
 
 main {
@@ -89,14 +86,10 @@ input[type=text] {
   padding-left: 25px;
   padding-right: 5px;
   border: 0;
-  outline: 1px solid transparent;
   background-color: white;
   color: black;
   font-size: 1em;
   transition: 0.2s ease outline-color;
-}
-input[type=text]:focus {
-  outline-color: #64B5F6;
 }
 
 .list {
@@ -106,16 +99,18 @@ input[type=text]:focus {
   margin-left: -40px;
   margin-top: 0;
   padding-top: -10px;
+  border-right: 1px solid #d3d3d3;
 }
 
 .list li {
   width: calc(100% - 45px);
-  margin-bottom: 4px;
   padding: 10px;
   padding-left: 35px;
   background-color: white;
+  margin-bottom: -2px;
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
   cursor: pointer;
-  transition: 0.1s ease background-color;
 }
 .list li p {
   font-size: 1.1em;
@@ -139,6 +134,7 @@ input[type=text]:focus {
   background-color: white;
   text-align: center;
   padding-top: 10px;
+  border-right: 1px solid #d3d3d3;
 }
 .paginationContainer label, .paginationContainer li {
   display: inline;

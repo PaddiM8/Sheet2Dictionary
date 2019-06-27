@@ -3,3 +3,4 @@ style/*.map
 gen/credentials.json
 gen/token.pickle
 scripts/words.js
+.sass-cache
