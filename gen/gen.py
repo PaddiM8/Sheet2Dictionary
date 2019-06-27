@@ -19,21 +19,27 @@ def parse_example_string(exampleString):
 
 def generate_words(rows):
     words = []
+    maxTypes = int(rows[0][2][-2:][0]) # get second last character (a number)
+    hasIPA = rows[0][3].lower().strip() == "ipa"
+    startDefinitions = 4 if hasIPA else 3
+    endDefinitions = startDefinitions + maxTypes
+
     for i, row in enumerate(rows):
         if (i == 0): continue
-        lastDefinition = 5 if len(row) >= 5 else 4
         types = "" if len(row) < 3 else [x.strip() for x in row[2].split(',')]
         word = {
                 "id":          i - 1,
                 "word":        row[0],
                 "english":     row[1],
                 "types":       types,
-                "definitions": row[3: lastDefinition],
+                "definitions": row[startDefinitions:endDefinitions],
                 "examples":    []
                 }
+
+        if hasIPA and len(row) > 3: word["ipa"] = row[3]
         for i in range(len(types)):
-            if len(row) < 6 + i: continue
-            word["examples"].append(parse_example_string(row[5 + i]))
+            if len(row) <= endDefinitions + i: break # break if there are no more examples
+            word["examples"].append(parse_example_string(row[endDefinitions + i]))
         words.append(word)
     return words
 

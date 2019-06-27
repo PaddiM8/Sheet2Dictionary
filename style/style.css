@@ -60,6 +60,11 @@ main .types {
   margin-left: 5px;
   color: #757575;
 }
+main .ipa {
+  color: #757575;
+  font-size: 1.2em;
+  margin-top: 6px;
+}
 main .english {
   color: #3949AB;
 }

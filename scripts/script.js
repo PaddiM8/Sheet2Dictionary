@@ -39,9 +39,19 @@ listElement.addEventListener("click", e => {
 });
 
 function selectWord(id) {
-   main.querySelector(".word").innerHTML = words[id].word;
-   main.querySelector(".types").innerHTML = words[id].types.join(", ");
-   main.querySelector(".english").innerHTML = words[id].english;
+   // Set the basic ones
+   for (const child of main.children) {
+      if (child.tagName == "H3") break; // Stop at definitions and all that
+         let content = words[id][child.className];
+
+         if (child.className == "types" && content.length > 0) {
+            child.innerHTML = content.join(", ");
+         } else if (content != undefined) {
+            child.innerHTML = content;
+         } else {
+            child.innerHTML = "";
+         }
+   }
 
    // Definition
    const definitions = words[id].definitions;
@@ -71,11 +81,9 @@ function selectWord(id) {
       }
    }
 
-   if (definitions.length == 0)
-        main.querySelector(".definitions-title").style.display = "none"
-   else main.querySelector(".definitions-title").style.display = ""
-
-   if (examples.length == 0)
-        main.querySelector(".examples-title").style.display = "none"
-   else main.querySelector(".examples-title").style.display = ""
+   // hide if empty
+   const definitionsState = definitions.length != 0 ? "" : "none";
+   const examplesState = examples.length != 0 ? "" : "none";
+   main.querySelector(".definitions-title").style.display = definitionsState;
+   main.querySelector(".examples-title").style.display = examplesState;
 };
