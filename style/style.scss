@@ -158,7 +158,6 @@ input[type="text"] {
    grid-area: pagination;
    background-color: white;
    text-align: center;
-   padding-top: 10px;
    border-right: $border;
 
    label, li {
@@ -199,5 +198,18 @@ input[type="text"] {
          text-decoration: none;
          color: black;
       }
+   }
+}
+
+@media only screen and (max-width: $width * 2) {
+   #wrapper {
+      grid-template-areas:
+         'header'
+         'search'
+         'list'
+         'pagination'
+         'main';
+      grid-template-columns: 100%;
+      grid-template-rows: 60px 60px 50% 50px auto;
    }
 }
