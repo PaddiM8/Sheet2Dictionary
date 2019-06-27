@@ -49,8 +49,15 @@ main {
   background-color: white;
   box-sizing: border-box;
 }
+main .word {
+  display: inline;
+}
 main .types {
-  margin-top: -5px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.2em;
+  margin-top: 0.45em;
+  margin-left: 5px;
   color: #757575;
 }
 main .english {
