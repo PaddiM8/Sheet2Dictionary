@@ -18,6 +18,7 @@ const options = {
 listElement.children[0].remove();
 
 const wordList = new List("wrapper", options, words);
+selectWord(0);
 
 document.getElementById("pagPrevious").addEventListener("click", () => {
    document.querySelector(".pagination .active").previousSibling.click();
@@ -31,12 +32,13 @@ listElement.addEventListener("click", e => {
    if (e.target.tagName == "UL") return;
 
    let id = "";
-   if (e.target.tagName == "LI") {
-      id = e.target.querySelector(".id").innerHTML;
-   } else {
-      id = e.target.parentElement.querySelector(".id").innerHTML;
-   }
+   if (e.target.tagName == "LI")
+        id = e.target.querySelector(".id").innerHTML;
+   else id = e.target.parentElement.querySelector(".id").innerHTML;
+   selectWord(id);
+});
 
+function selectWord(id) {
    main.querySelector(".word").innerHTML = words[id].word;
    main.querySelector(".types").innerHTML = words[id].types.join(", ");
    main.querySelector(".english").innerHTML = words[id].english;
@@ -49,7 +51,8 @@ listElement.addEventListener("click", e => {
    for (let i = 0; i < definitions.length; i++) {
       const type = words[id].types[i];
       const definition = words[id].definitions[i];
-      definitionElement.innerHTML += `<b>${type}: </b>${definition}<br />`;
+      if (type != undefined)
+         definitionElement.innerHTML += `<b>${type}: </b>${definition}<br />`;
    }
 
    // Example
@@ -57,13 +60,22 @@ listElement.addEventListener("click", e => {
    const exampleElement = main.querySelector(".examples");
    exampleElement.innerHTML = "";
 
-   for (let i = 0; i < definitions.length; i++) {
+   for (let i = 0; i < examples.length; i++) {
       const type = words[id].types[i];
       const typeExamples = words[id].examples[i];
-      exampleElement.innerHTML += `<h4>${type}</h4>`;
+      if (type != undefined)
+         exampleElement.innerHTML += `<h4>${type}</h4>`;
 
       for (example of typeExamples) {
          exampleElement.innerHTML += `${example.join("<br />")}<br /><br />`;
       }
    }
-});
+
+   if (definitions.length == 0)
+        main.querySelector(".definitions-title").style.display = "none"
+   else main.querySelector(".definitions-title").style.display = ""
+
+   if (examples.length == 0)
+        main.querySelector(".examples-title").style.display = "none"
+   else main.querySelector(".examples-title").style.display = ""
+};

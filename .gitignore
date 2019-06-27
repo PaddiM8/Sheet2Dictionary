@@ -1,2 +1,5 @@
-*.css
-credentials.json
+style/*.css
+style/*.map
+gen/credentials.json
+gen/token.pickle
+scripts/words.js
