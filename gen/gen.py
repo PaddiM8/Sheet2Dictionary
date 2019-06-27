@@ -13,6 +13,7 @@ words = []
 with open('test.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for i, row in enumerate(csv_reader):
+        if (i == 0) continue;
         lastDefinition = 5 if row[4] else 4
         types = [x.strip() for x in row[2].split(',')]
         word = {

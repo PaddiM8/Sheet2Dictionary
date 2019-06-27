@@ -2,8 +2,9 @@ $width: 650px;
 $margin: 10px;
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(.../res/SourceSansPro.woff2) format('woff2');
+  font-family: 'MainFont';
+  //src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url("../res/SourceSansPro-Regular.ttf");
+  src: url("../res/LibertinusSans-Regular.otf");
   font-weight: 400;
 }
 
@@ -12,7 +13,27 @@ body {
 }
 
 h1, h2, h3, h4, p, label, li, input {
-   font-family: 'Source Sans Pro';
+   font-family: 'MainFont';
+}
+
+h1 {
+   font-size: 2.1em;
+}
+
+h2 {
+   font-size: 1.8em;
+}
+
+h3 {
+   font-size: 1.6em;
+}
+
+h4 {
+   font-size: 1.3em;
+}
+
+p {
+   font-size: 1.2em;
 }
 
 #wrapper {
@@ -69,6 +90,7 @@ input[type="text"] {
    outline: 1px solid transparent;
    background-color: white;
    color: black;
+   font-size: 1em;
    transition: .2s ease outline-color;
 
    &:focus {
@@ -93,6 +115,14 @@ input[type="text"] {
    background-color: white;
    cursor: pointer;
    transition: .1s ease background-color;
+
+   p {
+      font-size: 1.1em;
+   }
+
+   h3 {
+      font-size: 1.3em;
+   }
 
    .word {
       line-height: 0;
