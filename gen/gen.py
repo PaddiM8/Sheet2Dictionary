@@ -7,12 +7,29 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+options = {}
 
-options = None
-if os.path.exists('options.json'):
+def run_setup():
+    print("-= Setup =-")
+    print("The spreadsheet id is in the spreadsheet URL. Example: 1K4ICqBO1N4HdhZ0sr3tq6EQHe5zDK0OPxd3Ik_rHAQf")
+    print("The sheet name is shown on the tab on the bottom of the screen.")
+    sheetId = input("Spreadsheet ID: ")
+    sheetName = input("Sheet name: ")
+    options["spreadsheetId"] = sheetId
+    options["range"] = sheetName + "!A:ZZ"
+    with open('options.json', 'w') as outfile:
+        json.dump(options, outfile, ensure_ascii=False, indent=2)
+
+
+if not os.path.exists('credentials.json') and not os.path.exists("token.pickle"):
+    print("You need to enable the Google Sheets API and download the credentials.json file.")
+    print("Then move the credentials.json file to this directory and re-run the script.")
+    print("Enable Google Sheets API here: https://bit.ly/2FDmSkr")
+    quit()
+elif os.path.exists('options.json'):
     with open('options.json') as f:
         options = json.load(f)
-else
+else:
     run_setup()
 
 def parse_example_string(exampleString):
