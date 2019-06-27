@@ -23,4 +23,5 @@ The first row in the spreadsheet will not be included. The (1) after 'Part of Sp
 | vālo| leg, walk, go | noun, verb | A limb | Moving using one's legs | vālosē > It is a leg | vālon toralu > I walk to the house |
 
 As you can see, you can provide a translation after a `>`. You can also provide several examples for one "part of speech" by separating them by a pipe: `|`.
-
+[Example Sheet](https://docs.google.com/spreadsheets/d/1_te9ZTrF1mvLh3p8U_uhptGdGzOtBWBbvMA0dXGV15c/edit?usp=sharing)
+(Colors are of purely for aesthetic purposes)
