@@ -1,5 +1,5 @@
-style/*.css
-style/*.map
+*.css
+*.map
 gen/credentials.json
 gen/token.pickle
 scripts/words.js
