@@ -6,6 +6,7 @@ Generates a HTML dictionary from a Google Sheet document.
 * Examples for words
 * Static, no backend
 * Generates the dictionary from a Google Sheet document
+* Responsive, works on phones
 
 ![dictionary](https://i.imgur.com/lAUrPS1.png)
 
