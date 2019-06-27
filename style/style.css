@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url(.../res/SourceSansPro.woff2) format("woff2");
+  font-weight: 400;
+}
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, p, label, li, input {
+  font-family: "Source Sans Pro";
+}
+
+#wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: "search main" "list main" "pagination main";
+  grid-template-columns: 650px auto;
+  grid-template-rows: 60px auto 50px;
+  grid-gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #E0E0E0;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+  height: calc(100vh - $margin * 2);
+  padding: 80px;
+  padding-top: 30px;
+  background-color: white;
+  box-sizing: border-box;
+}
+main .types {
+  margin-top: -5px;
+  color: #757575;
+}
+main h3 {
+  margin-bottom: -5px;
+  padding-top: 10px;
+}
+main h4 {
+  font-weight: 300;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.searchfield {
+  grid-area: search;
+}
+
+input[type=text] {
+  width: calc(100% - 30px);
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 5px;
+  border: 0;
+  outline: 1px solid transparent;
+  background-color: white;
+  color: black;
+  transition: 0.2s ease outline-color;
+}
+input[type=text]:focus {
+  outline-color: #64B5F6;
+}
+
+.list {
+  grid-area: list;
+  height: 100%;
+  list-style: none;
+  margin-left: -40px;
+  margin-top: 0;
+  padding-top: -10px;
+}
+
+.list li {
+  width: calc(100% - 45px);
+  margin-bottom: 4px;
+  padding: 10px;
+  padding-left: 35px;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.1s ease background-color;
+}
+.list li .word {
+  line-height: 0;
+}
+.list li .english {
+  color: blue;
+  line-height: 0.8;
+}
+.list li:hover {
+  background-color: #EEEEEE;
+}
+
+.paginationContainer {
+  grid-area: pagination;
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+.paginationContainer label, .paginationContainer li {
+  display: inline;
+  cursor: pointer;
+  padding: 5px 0 5px 0;
+  border: 1px solid #E0E0E0;
+}
+.paginationContainer label:hover, .paginationContainer li:hover {
+  background-color: #EEEEEE;
+}
+.paginationContainer label, .paginationContainer .page {
+  padding: 5px;
+}
+
+.active .page {
+  background-color: #D3D3D3;
+}
+
+.pagination .disabled {
+  display: none;
+}
+
+.pagination {
+  display: inline;
+  margin-top: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.pagination li {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+}
+.pagination li a {
+  text-decoration: none;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
