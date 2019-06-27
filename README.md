@@ -1,5 +1,5 @@
 # Sheet2Dictionary
-This tool reads your word list spreadsheet and creates a portable HTML dictionary automatically. All you have to do is provide the Google spreadsheet id (and sheet name). This way you can easily edit your dictionary from anywhere(even collaboratively). You could for example make periodically it automatically re-generate the dictionary and push it to netlify using a CRON job.
+This tool reads your word list spreadsheet and creates a portable HTML dictionary automatically. All you have to do is provide the Google spreadsheet id (and sheet name). This way you can easily edit your dictionary from anywhere(even collaboratively). You could for example make it periodically re-generate the dictionary and push it to netlify using a CRON job, all automatically.
  
 * Search for words
 * Word definitions
