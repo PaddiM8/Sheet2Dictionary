@@ -10,6 +10,11 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 
 ![dictionary](https://i.imgur.com/lAUrPS1.png)
 
+## Usage
+1. Create the spreadsheet as shown below.
+2. Run `gen.py` inside the `gen/` folder using Python 3, then simply follow the instructions.
+3. Open index.html in a browser
+
 ## Spreadsheet
 The spreadsheet consists of the following columns:  
 
