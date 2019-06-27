@@ -1,6 +1,6 @@
 # Sheet2Dictionary
-Generates a HTML dictionary from a Google Sheet document.
-
+This tool let's read your word list spreadsheet and creates a portable HTML dictionary automatically. All you have to do is provide the Google spreadsheet id (and sheet name). This way you can easily edit your dictionary from anywhere(even collaboratively). You could for example make periodically it automatically re-generate the dictionary and push it to netlify using a CRON job.
+ 
 * Search for words
 * Word definitions
 * Examples for words
