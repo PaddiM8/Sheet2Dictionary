@@ -13,10 +13,12 @@ def run_setup():
     print("-= Setup =-")
     print("The spreadsheet id is in the spreadsheet URL. Example: 1K4ICqBO1N4HdhZ0sr3tq6EQHe5zDK0OPxd3Ik_rHAQf")
     print("The sheet name is shown on the tab on the bottom of the screen.")
+    dictionaryName = input("Choose dictionary name: ")
     sheetId = input("Spreadsheet ID: ")
     sheetName = input("Sheet name: ")
     options["spreadsheetId"] = sheetId
     options["range"] = sheetName + "!A:ZZ"
+    options["name"] = dictionaryName
     with open('options.json', 'w') as outfile:
         json.dump(options, outfile, ensure_ascii=False, indent=2)
 
@@ -31,6 +33,13 @@ elif os.path.exists('options.json'):
         options = json.load(f)
 else:
     run_setup()
+
+def inject_name(name):
+    with open("../index.html", "r+") as f:
+        data = f.read()
+        f.seek(0)
+        f.write(data.replace("<!-- NAME -->", name, 2))
+        f.truncate()
 
 def parse_example_string(exampleString):
     if not exampleString: return None
@@ -95,6 +104,7 @@ def main():
 
     with open('../scripts/words.js', 'w') as file:
         file.write("const words = " + json.dumps(words, separators=(',', ':')) + ";")
+    inject_name(options["name"])
     print("Done! You may now open index.html in the main directory.")
 
 if __name__ == '__main__':
