@@ -12,8 +12,9 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 
 ## Usage
 1. Create the spreadsheet as shown below.
-2. Run `gen.py` inside the `gen/` folder using Python 3, then simply follow the instructions.
-3. Open index.html in a browser
+2. Install Python 3 and pip, then run the following in a command line/terminal: `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
+3. Run `gen.py` inside the `gen/` folder using Python 3, then simply follow the instructions.
+4. Open index.html in a browser
 
 ## Spreadsheet
 The spreadsheet consists of the following columns:  
