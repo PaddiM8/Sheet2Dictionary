@@ -61,7 +61,7 @@ function selectWord(id) {
    for (let i = 0; i < definitions.length; i++) {
       const type = words[id].types[i];
       const definition = words[id].definitions[i];
-      if (type != undefined)
+      if (type && definition)
          definitionElement.innerHTML += `<b>${type}: </b>${definition}<br />`;
    }
 
@@ -71,6 +71,7 @@ function selectWord(id) {
    exampleElement.innerHTML = "";
 
    for (let i = 0; i < examples.length; i++) {
+      if (examples[i] == null) continue;
       const type = words[id].types[i];
       const typeExamples = words[id].examples[i];
       if (type != undefined)
