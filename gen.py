@@ -14,13 +14,15 @@ def run_setup():
     print("-= Setup =-")
     print("The spreadsheet id is in the spreadsheet URL. Example: 1K4ICqBO1N4HdhZ0sr3tq6EQHe5zDK0OPxd3Ik_rHAQf")
     print("The sheet name is shown on the tab on the bottom of the screen.")
-    dictionaryName = input("Choose dictionary name: ")
     sheetId = input("Spreadsheet ID: ")
     sheetName = input("Sheet name: ")
     options["spreadsheetId"] = sheetId
     options["range"] = sheetName + "!A:ZZ"
+<<<<<<< HEAD:gen.py
     options["name"] = dictionaryName
     options["outputLocation"] = dictionaryName
+=======
+>>>>>>> parent of fa652c1... dictionary name:gen/gen.py
     with open('options.json', 'w') as outfile:
         json.dump(options, outfile, ensure_ascii=False, indent=2)
 
@@ -36,6 +38,7 @@ elif os.path.exists('options.json'):
 else:
     run_setup()
 
+<<<<<<< HEAD:gen.py
 def inject_name(name):
     with open(options["outputLocation"] + "/index.html", "r+") as f:
         data = f.read()
@@ -43,6 +46,8 @@ def inject_name(name):
         f.write(data.replace("<!-- NAME -->", name, 2))
         f.truncate()
 
+=======
+>>>>>>> parent of fa652c1... dictionary name:gen/gen.py
 def parse_example_string(exampleString):
     if not exampleString: return None
     examples = []
@@ -108,8 +113,12 @@ def main():
 
     with open(options["outputLocation"] + '/scripts/words.js', 'w') as file:
         file.write("const words = " + json.dumps(words, separators=(',', ':')) + ";")
+<<<<<<< HEAD:gen.py
     inject_name(options["name"])
     print("Done! Open " + options["outputLocation"] + "/index.html")
+=======
+    print("Done! You may now open index.html in the main directory.")
+>>>>>>> parent of fa652c1... dictionary name:gen/gen.py
 
 if __name__ == '__main__':
     main()
