@@ -2,6 +2,7 @@ import csv
 import json
 import pickle
 import os.path
+import shutil
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -19,6 +20,7 @@ def run_setup():
     options["spreadsheetId"] = sheetId
     options["range"] = sheetName + "!A:ZZ"
     options["name"] = dictionaryName
+    options["outputLocation"] = dictionaryName
     with open('options.json', 'w') as outfile:
         json.dump(options, outfile, ensure_ascii=False, indent=2)
 
@@ -35,7 +37,7 @@ else:
     run_setup()
 
 def inject_name(name):
-    with open("../index.html", "r+") as f:
+    with open(options["outputLocation"] + "/index.html", "r+") as f:
         data = f.read()
         f.seek(0)
         f.write(data.replace("<!-- NAME -->", name, 2))
@@ -102,10 +104,12 @@ def main():
     rows = result.get('values', [])
     words = generate_words(rows)
 
-    with open('../scripts/words.js', 'w') as file:
+    shutil.copytree("template", options["outputLocation"]) # copy template
+
+    with open(options["outputLocation"] + '/scripts/words.js', 'w') as file:
         file.write("const words = " + json.dumps(words, separators=(',', ':')) + ";")
     inject_name(options["name"])
-    print("Done! You may now open index.html in the main directory.")
+    print("Done! Open " + options["outputLocation"] + "/index.html")
 
 if __name__ == '__main__':
     main()

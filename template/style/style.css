@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "MainFont";
+  src: url("../res/LibertinusSans-Regular.otf");
+  font-weight: 400;
+}
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, p, label, li, input {
+  font-family: "MainFont";
+}
+
+h1 {
+  font-size: 2.1em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+#wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: "search header" "list main" "pagination main";
+  grid-template-columns: 650px auto;
+  grid-template-rows: 60px auto 50px;
+  box-sizing: border-box;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+  height: calc(100vh - $margin * 2);
+  padding: 80px;
+  padding-top: 30px;
+  background-color: white;
+  box-sizing: border-box;
+}
+main .word {
+  display: inline;
+}
+main .types {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.2em;
+  margin-top: 0.45em;
+  margin-left: 5px;
+  color: #757575;
+}
+main .ipa {
+  color: #757575;
+  font-size: 1.2em;
+  margin-top: 6px;
+}
+main .english {
+  color: #3949AB;
+}
+main h3 {
+  margin-bottom: -5px;
+  padding-top: 10px;
+}
+main h4 {
+  font-weight: 300;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.searchfield {
+  grid-area: search;
+}
+
+header {
+  grid-area: header;
+  background-color: #3949AB;
+}
+header h1 {
+  color: white;
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+input[type=text] {
+  width: calc(100% - 30px);
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 5px;
+  border: 0;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  transition: 0.2s ease outline-color;
+}
+
+.list {
+  grid-area: list;
+  height: 100%;
+  list-style: none;
+  margin-left: -40px;
+  margin-top: 0;
+  padding-top: -10px;
+  border-right: 1px solid #d3d3d3;
+}
+
+.list li {
+  width: calc(100% - 45px);
+  padding: 10px;
+  padding-left: 35px;
+  background-color: white;
+  margin-bottom: -2px;
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  cursor: pointer;
+}
+.list li p {
+  font-size: 1.1em;
+}
+.list li h3 {
+  font-size: 1.3em;
+}
+.list li .word {
+  line-height: 0;
+}
+.list li .english {
+  color: #3949AB;
+  line-height: 0.8;
+}
+.list li:hover {
+  background-color: #EEEEEE;
+}
+
+.paginationContainer {
+  grid-area: pagination;
+  background-color: white;
+  text-align: center;
+  border-right: 1px solid #d3d3d3;
+}
+.paginationContainer label, .paginationContainer li {
+  display: inline;
+  cursor: pointer;
+  padding: 5px 0 5px 0;
+  border: 1px solid #E0E0E0;
+}
+.paginationContainer label:hover, .paginationContainer li:hover {
+  background-color: #EEEEEE;
+}
+.paginationContainer label, .paginationContainer .page {
+  padding: 5px;
+}
+
+.active .page {
+  background-color: #D3D3D3;
+}
+
+.pagination .disabled {
+  display: none;
+}
+
+.pagination {
+  display: inline;
+  margin-top: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.pagination li {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+}
+.pagination li a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (max-width: 1300px) {
+  #wrapper {
+    grid-template-areas: "header" "search" "list" "pagination" "main";
+    grid-template-columns: 100%;
+    grid-template-rows: 60px 60px 50% 50px auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
