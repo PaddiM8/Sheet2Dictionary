@@ -45,7 +45,7 @@ def inject_name(name):
 
 def copy_template(target):
     if not os.path.exists(options["outputLocation"]):
-        os.makedir(options["outputLocation"])
+        os.makedirs(options["outputLocation"])
     for filename in os.listdir("template"):
         target = options["outputLocation"] + "/" + filename
         templateFile = "template/" + filename
