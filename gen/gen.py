@@ -41,7 +41,9 @@ def parse_example_string(exampleString):
 
 def generate_words(rows):
     words = []
-    maxTypes = int(rows[0][2][-2:][0]) # get second last character (a number)
+    maxTypes = 1
+    try: maxTypes = int(rows[0][2][-2:][0]) # get second last character (a number)
+    except: pass
     hasIPA = rows[0][3].lower().strip() == "ipa"
     startDefinitions = 4 if hasIPA else 3
     endDefinitions = startDefinitions + maxTypes
