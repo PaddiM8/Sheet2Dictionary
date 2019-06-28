@@ -14,7 +14,7 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 1. Create the spreadsheet as shown below.
 2. Install [Python 3](https://www.python.org/downloads/release/python-373/), then run the following in a command line/terminal: `pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib` to install the Google API client the tool needs. If it fails, you may need to run it with sudo/admin privileges.
 3. Clone/download [this repository](https://github.com/PaddiM8/Sheet2Dictionary/archive/master.zip) (and unzip). Then simply go to the Sheet2Dictionary/gen folder and run `gen.py` with python 3. In a terminal, that would be `python3 gen.py`
-4. This will prompt you to enable the Google Sheets API and download the credentials.json file. Simply follow [the link](https://developers.google.com/sheets/api/quickstart/python?authuser=1) and enable it. After that, go to *Credentials* and 
+4. This will prompt you to enable the Google Sheets API. Simply follow [the link](https://developers.google.com/sheets/api/quickstart/python?authuser=1) and enable it. After that, download the configuration and place `credentials.json` in the `gen` directory. Run `gen.pỳ` again, and follow the instructions.
 4. Open index.html in a browser
 
 ## Spreadsheet
