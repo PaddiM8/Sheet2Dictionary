@@ -12,8 +12,8 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 
 ## Usage
 1. Create the spreadsheet as shown below.
-2. Install Python 3 and pip, then run the following in a command line/terminal: `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
-3. Run `gen.py` inside the `gen/` folder using Python 3, then simply follow the instructions.
+2. Install [Python 3](https://www.python.org/downloads/release/python-373/), then run the following in a command line/terminal: `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib` to install the Google API client the tool needs.
+3. Clone/download this repository(if you download a ZIP you'll need to unzip it too). Then simply run `gen.py` inside the `gen/` folder with python 3, and follow the instructions.
 4. Open index.html in a browser
 
 ## Spreadsheet
