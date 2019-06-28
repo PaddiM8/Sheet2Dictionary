@@ -24,7 +24,7 @@ def run_setup():
 if not os.path.exists('credentials.json') and not os.path.exists("token.pickle"):
     print("You need to enable the Google Sheets API and download the credentials.json file.")
     print("Then move the credentials.json file to this directory and re-run the script.")
-    print("Enable Google Sheets API here: https://bit.ly/2FDmSkr")
+    print("Enable Google Sheets API here: https://bit.ly/2vbwMH0")
     quit()
 elif os.path.exists('options.json'):
     with open('options.json') as f:
