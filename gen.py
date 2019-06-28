@@ -14,6 +14,7 @@ def run_setup():
     print("-= Setup =-")
     print("The spreadsheet id is in the spreadsheet URL. Example: 1K4ICqBO1N4HdhZ0sr3tq6EQHe5zDK0OPxd3Ik_rHAQf")
     print("The sheet name is shown on the tab on the bottom of the screen.")
+    dictionaryName("Choose dictionary name: ")
     sheetId = input("Spreadsheet ID: ")
     sheetName = input("Sheet name: ")
     options["spreadsheetId"] = sheetId
