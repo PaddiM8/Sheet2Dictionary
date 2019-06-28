@@ -1,4 +1,3 @@
-*.css
 *.map
 gen/credentials.json
 gen/token.pickle

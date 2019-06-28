@@ -90,13 +90,10 @@ def main():
     spreadsheetId=options["spreadsheetId"], range=options["range"]).execute()
     rows = result.get('values', [])
     words = generate_words(rows)
-    #words = []
-    #with open('test.csv') as csv_file:
-    #    csv_reader = csv.reader(csv_file, delimiter=',')
-    #    words = generate_word(csv_reader)
-    #
+
     with open('../scripts/words.js', 'w') as file:
         file.write("const words = " + json.dumps(words, separators=(',', ':')) + ";")
+    print("Done! You may now open index.html in the main directory.")
 
 if __name__ == '__main__':
     main()
