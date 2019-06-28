@@ -31,4 +31,5 @@ The first row in the spreadsheet will not be included. The (1) after 'Part of Sp
 
 As you can see, you can provide a translation after a `>`. You can also provide several examples for one "part of speech" by separating them by a pipe: `|`.  
 [Example Sheet](https://docs.google.com/spreadsheets/d/1_te9ZTrF1mvLh3p8U_uhptGdGzOtBWBbvMA0dXGV15c/edit?usp=sharing)
-(Colors are of purely for aesthetic purposes)
+(Colors are of purely for aesthetic purposes)  
+[Example Sheet with an IPA column](https://docs.google.com/spreadsheets/d/1aku5t5W1UJcxVLz2l9HiSpuDXbgQT-3nQTrYV8dmo6k/edit?usp=sharing)
