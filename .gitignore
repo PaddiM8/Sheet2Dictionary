@@ -1,6 +1,6 @@
 *.map
-gen/credentials.json
-gen/token.pickle
+credentials.json
+token.pickle
 words.js
 .sass-cache
 options.json
