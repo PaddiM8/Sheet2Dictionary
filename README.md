@@ -10,6 +10,13 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 
 ![dictionary](https://i.imgur.com/lAUrPS1.png)
 
+## Usage
+1. Create the spreadsheet as shown below.
+2. Install [Python 3](https://www.python.org/downloads/release/python-373/), then run the following in a command line/terminal: `pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib` to install the Google API client the tool needs. If it fails, you may need to run it with sudo/admin privileges.
+3. Clone/download [this repository](https://github.com/PaddiM8/Sheet2Dictionary/archive/master.zip) (and unzip). Then simply run `gen.py` inside the `gen/` folder with python 3. In a terminal, that would be `python3 gen.py`
+4. This will prompt you to enable the Google Sheets API and download the credentials.json file. Simply follow [the link](https://developers.google.com/sheets/api/quickstart/python?authuser=1) and enable it. After that, go to *Credentials* and 
+4. Open index.html in a browser
+
 ## Spreadsheet
 The spreadsheet consists of the following columns:  
 
@@ -25,4 +32,5 @@ The first row in the spreadsheet will not be included. The (1) after 'Part of Sp
 
 As you can see, you can provide a translation after a `>`. You can also provide several examples for one "part of speech" by separating them by a pipe: `|`.  
 [Example Sheet](https://docs.google.com/spreadsheets/d/1_te9ZTrF1mvLh3p8U_uhptGdGzOtBWBbvMA0dXGV15c/edit?usp=sharing)
-(Colors are of purely for aesthetic purposes)
+(Colors are of purely for aesthetic purposes)  
+[Example Sheet with an IPA column](https://docs.google.com/spreadsheets/d/1aku5t5W1UJcxVLz2l9HiSpuDXbgQT-3nQTrYV8dmo6k/edit?usp=sharing)
