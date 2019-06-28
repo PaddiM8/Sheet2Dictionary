@@ -19,8 +19,11 @@ def run_setup():
     options["spreadsheetId"] = sheetId
     options["range"] = sheetName + "!A:ZZ"
 <<<<<<< HEAD:gen.py
+<<<<<<< HEAD:gen.py
     options["name"] = dictionaryName
     options["outputLocation"] = dictionaryName
+=======
+>>>>>>> parent of fa652c1... dictionary name:gen/gen.py
 =======
 >>>>>>> parent of fa652c1... dictionary name:gen/gen.py
     with open('options.json', 'w') as outfile:
@@ -39,6 +42,7 @@ else:
     run_setup()
 
 <<<<<<< HEAD:gen.py
+<<<<<<< HEAD:gen.py
 def inject_name(name):
     with open(options["outputLocation"] + "/index.html", "r+") as f:
         data = f.read()
@@ -46,6 +50,8 @@ def inject_name(name):
         f.write(data.replace("<!-- NAME -->", name, 2))
         f.truncate()
 
+=======
+>>>>>>> parent of fa652c1... dictionary name:gen/gen.py
 =======
 >>>>>>> parent of fa652c1... dictionary name:gen/gen.py
 def parse_example_string(exampleString):
@@ -114,9 +120,12 @@ def main():
     with open(options["outputLocation"] + '/scripts/words.js', 'w') as file:
         file.write("const words = " + json.dumps(words, separators=(',', ':')) + ";")
 <<<<<<< HEAD:gen.py
+<<<<<<< HEAD:gen.py
     inject_name(options["name"])
     print("Done! Open " + options["outputLocation"] + "/index.html")
 =======
+=======
+>>>>>>> parent of fa652c1... dictionary name:gen/gen.py
     print("Done! You may now open index.html in the main directory.")
 >>>>>>> parent of fa652c1... dictionary name:gen/gen.py
 
