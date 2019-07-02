@@ -18,6 +18,10 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 4. This will prompt you to enable the Google Sheets API. Simply follow [the link](https://developers.google.com/sheets/api/quickstart/python?authuser=1) and enable it. After that, download the configuration and place `credentials.json` in the `gen` directory. Run `gen.pỳ` again, and follow the instructions.
 4. Open index.html in a browser
 
+## Troubleshooting
+* When running the commands above, make sure you're in your operating systems command line/terminal.
+* If you get an error saying pip3 is not defined, [https://stackoverflow.com/a/41501815](try following this answer) to get something like `C:\path\to\python\Scripts\pip3` and replace that with 'pip3' in the command above. 
+
 ## Spreadsheet
 The spreadsheet consists of the following columns:  
 
