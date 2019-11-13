@@ -9,7 +9,7 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 * Generates the dictionary from a Google Sheet document
 * Responsive, works on phones
 
-![dictionary](https://i.imgur.com/lAUrPS1.pngg)
+![dictionary](https://i.imgur.com/lAUrPS1)
 
 ## Usage
 1. Create the spreadsheet as shown below.
