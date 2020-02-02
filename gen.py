@@ -1,13 +1,9 @@
 import csv
 import ntpath
 import json
-import pickle
 import os.path
 import shutil
 import sys
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
 
 def inject_name(name):
     with open(name + "/index.html", "r+") as f:
