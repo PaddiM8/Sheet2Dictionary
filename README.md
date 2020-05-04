@@ -1,5 +1,4 @@
 # Sheet2Dictionary
-**I updated the instructions, so if you didn't get it to work before, you should be able to get it working now!**
 This tool reads your word list spreadsheet and creates a portable HTML dictionary automatically. All you have to do is provide the Google spreadsheet id (and sheet name). This way you can easily edit your dictionary from anywhere(even collaboratively). You could for example make it periodically re-generate the dictionary and push it to netlify using a CRON job, all automatically.
  
 * Search for words
@@ -14,13 +13,13 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 ## Usage
 1. Create the spreadsheet as shown below.
 2. Install [Python 3](https://www.python.org/downloads/release/python-373/), then run the following in a command line/terminal: `pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib` to install the Google API client the tool needs. If it fails, you may need to run it with sudo/admin privileges.
-3. Clone/download [this repository](https://github.com/PaddiM8/Sheet2Dictionary/archive/master.zip) (and unzip). Then simply go to the Sheet2Dictionary/gen folder and run `gen.py` with python 3. In a terminal, that would be `python3 gen.py`
+3. Clone/download [this repository](https://github.com/PaddiM8/Sheet2Dictionary/archive/master.zip) (and unzip). Then simply go to the Sheet2Dictionary/gen folder and run `gen.py` with python In a terminal, that would be `python3 gen.py`
 4. This will prompt you to enable the Google Sheets API. Simply follow [the link](https://developers.google.com/sheets/api/quickstart/python?authuser=1) and enable it. After that, download the configuration and place `credentials.json` in the `gen` directory. Run `gen.pỳ` again, and follow the instructions.
 4. Open index.html in a browser
 
 ## Troubleshooting
 * When running the commands above, make sure you're in your operating systems command line/terminal.
-* If you get an error saying pip3 is not defined, [https://stackoverflow.com/a/41501815](try following this answer) to get something like `C:\path\to\python\Scripts\pip3` and replace that with 'pip3' in the command above. 
+* If you get an error saying pip3 is not defined, (try following this answer)[https://stackoverflow.com/a/41501815] to get something like `C:\path\to\python\Scripts\pip3` and replace that with 'pip3' in the command above. 
 
 ## Spreadsheet
 The spreadsheet consists of the following columns:  
