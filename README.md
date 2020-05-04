@@ -19,7 +19,7 @@ This tool reads your word list spreadsheet and creates a portable HTML dictionar
 
 ## Troubleshooting
 * When running the commands above, make sure you're in your operating systems command line/terminal.
-* If you get an error saying pip3 is not defined, (try following this answer)[https://stackoverflow.com/a/41501815] to get something like `C:\path\to\python\Scripts\pip3` and replace that with 'pip3' in the command above. 
+* If you get an error saying pip3 is not defined, [try following this answer](https://stackoverflow.com/a/41501815) to get something like `C:\path\to\python\Scripts\pip3` and replace that with 'pip3' in the command above. 
 
 ## Spreadsheet
 The spreadsheet consists of the following columns:  
